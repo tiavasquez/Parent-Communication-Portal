@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VDC Parent Communication</title>
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/parents-manage.css"> -->
+
+</head>
+<body class="blue-bg">
+        
+    
+      <nav class="navbar transparent navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right navbar-inverse">
+            <li><a href="/">Home</a></li>
+            <li><a href="/dancerDisplay">Dancers</a></li>
+            <li><a href="/parentDisplay">Parents</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="/dmanage">Manage Dancers</a></li>
+                <li><a href="/pmanage">Manage Parents</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+    </nav>
+             
+     <div class="jumbotron">
+        <div class="container text-center">
+          <h1>Manage Parents</h1>
+        </div>
+      </div> 
+  
+    
+
+     <div class="container">
+
+            <button type="button" class="btn btn-default btn-primary btn-lg" id="addParentBtn">Add Parent</button>
+          
+      <!-- Add Parent Modal -->
+
+            <div class="modal fade" id="addParentModal" role="dialog">
+              <div class="modal-dialog">
+
+                <div class="modal-content">
+                  <div class="modal-header" style="font-size:30px;padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Add Parent</h4>
+                  </div>
+                  <div class="modal-body" style="padding:40px 50px;">
+                    <form id="addParentForm" role="form">
+                      <div class="form-group"> <!-- parent name -->
+                        <label for="prntname"><span class="glyphicon glyphicon-user"></span>Parent Name (First and Last)</label>
+                        <input type="text" class="form-control" id="prntname" placeholder="Enter name">
+                      </div>
+                      <div class="form-group"> <!-- select dancer --> 
+                        <label for="selDancer">Select Dancer</label>
+                        <select class="form-control" id="selDancer" >
+                            <!-- dynamically build option tags with each dancer in the database -->
+                        </select>
+                      </div>
+                      <div class="form-group"> <!-- email -->
+                        <label for="emailaddr">Email</label>
+                        <input type="text" class="form-control" id="emailaddr" placeholder="example@XYZ.com">
+                      </div>
+                      <div class="form-group"> <!-- phone number -->
+                        <label for="phonenum">Phone Number</label>
+                        <input type="text" class="form-control" id="phonenum" placeholder="9999999999 (10 digit)">
+                      </div>
+                      <div class="form-group"> <!-- Submit Button -->                       
+                        <button type="submit" class="btn btn-primary">Submit</button> 
+                      </div> 
+                      <div id="successMessage">
+                          <!-- placeholder for message after successfully adding a new parent -->
+                      </div>        											                   
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>  <!--  END of modal-content -->
+                
+                
+              </div> <!--  END of modal-dialog -->
+            </div> <!--  END of addParentModal -->
+          
+
+<!-- Update Parent Modal -->
+ <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+    
+            <div class="modal-header">
+              <h4 class="modal-title">Update Parent Information</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+                    <div class="modal-body" style="padding:40px 50px;">
+                            <form id="updForm" role="form">
+                               
+                                 
+                              <div class="form-group">
+                                <label for="parent-name" class="form-control-label">Parent Name:</label>
+                                <input type="text" class="form-control" value="name" id="parent-name">
+                               
+                              </div>
+                              <div class="form-group">
+                                    <label for="parent-email" class="form-control-label" >Parent Email:</label>
+                                    <input type="text" class="form-control" value="email" id="parent-email">
+                                   
+                                </div>
+                               <div class="form-group">
+                                    <label for="parent-phone" class="form-control-label" >Parent Phone:</label>
+                                    <input type="text" class="form-control" value="phone" id="parent-phone">
+                                </div>
+                                <div class="form-group">
+                                  <label for="dancer-name" class="form-control-label">Dancer Name:</label>
+                                  <input type="text" class="form-control" value="dname" id="dancer-name" readonly>
+                               
+                                </div>
+                                <div class="form-group">
+                                  <label for="parent-id" class="form-control-label">Parent ID:</label>
+                                  <input type="text" class="form-control" value="id" id="parent-id" readonly>
+                                </div>  
+                                <div class="form-group"> <!-- Submit Button -->                                                       
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>  
+                                <div id="updateSuccessMessage">
+                                      <!-- placeholder for message after successfully updating dancer -->
+                                </div>  
+                            </form>
+                    </div>       
+                    <div class="modal-footer"> 
+                      <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                          <span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div> <!-- END of modal-footer -->
+    
+          </div>
+        </div>  
+      </div>
+
+  <!-- Delete Parent Modal -->
+      <div class="modal fade" id="myModal2">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <h4 class="modal-title">Remove Parent from Database</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+              
+                        <div class="modal-body2" style="padding:40px 50px;">
+                                <form id="delForm" role="form">
+                                   
+                                  <div class="form-group">
+                                    <label for="dparent-name" class="form-control-label">Parent Name:</label>
+                                    <input type="text" class="form-control" value="name" id="dparent-name" readonly>
+                                   
+                                  </div>
+                                  <div class="form-group">
+                                        <label for="dparent-email" class="form-control-label" >Parent Email:</label>
+                                        <input type="text" class="form-control" value="email" id="dparent-email" readonly>
+                                       
+                                    </div>
+                                   <div class="form-group">
+                                        <label for="dparent-phone" class="form-control-label" >Parent Phone:</label>
+                                        <input type="text" class="form-control" value="phone" id="dparent-phone" readonly>
+                                    </div>                                  
+                                     
+                                      <div class="form-group">
+                                      <label for="ddacner-name" class="form-control-label">Dancer Name:</label>
+                                      <input type="text" class="form-control" value="id" id="ddancer-name" readonly>
+                                   
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="dparent-id" class="form-control-label">Parent ID:</label>
+                                      <input type="text" class="form-control" value="id" id="dparent-id" readonly>
+                                    </div>
+                                    <div class="form-group"> <!-- Submit Button -->                                                       
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>     
+                                    <div id="deleteSuccessMessage">
+                                      <!-- placeholder for message after successfully updating dancer -->
+                                    </div>
+                                </form>
+                        </div>       
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                              <span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div> <!-- END of modal-footer -->
+        
+              </div>
+            </div>  
+          </div>
+
+ <div id="dynamicTable">
+ </div>
+
+</div> <!-- END of container -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/parentsmanage.js"></script>
+
+
+  </body>
+</html>

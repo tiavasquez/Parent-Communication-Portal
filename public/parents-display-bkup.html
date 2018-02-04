@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>VDC Parent Communication</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="parent-disp-bg">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/dancerDisplay">Dancers</a></li>
+            <li class="active"><a href="/parentDisplay">Parents</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="/dmanage">Manage Dancers</a></li>
+                <li><a href="/pmanage">Manage Parents</a></li>
+                </ul>
+                <li class="active"><a href="/resourceDisplay">Resources</a></li>
+                <li class="active"><a href="/contactDisplay">Contact</a></li>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+    <div class="container" id="parent-disp">
+            <div class="jumbotron">
+                <h1>Parents</h1>         
+            </div>
+        <div class="row">
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="col-md-3">Name</th>
+                        <th class="col-md-3">Email</th>
+                        <th class="col-md-3">Phone</th>
+                        <th class="col-md-3">Dancer</th>
+                      </tr>
+                    </thead>
+                    <tbody id="parentTable">
+                      <!-- <tr>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td>9998887777</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Mary Doe</td>
+                        <td>mary@example.com</td>
+                        <td>1112223333</td>
+                        <td></td>
+                      </tr> -->
+                    </tbody>
+            </table>
+        </div>
+
+    </div> <!-- end class="container" -->
+
+</div> <!-- end class="dancer-disp-bg" -->
+
+<!-- Custom Script -->
+<script src="js/parents-display.js" type="text/javascript"></script>
+
+</body>
+</html>
