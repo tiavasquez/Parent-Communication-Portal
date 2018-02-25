@@ -47,7 +47,7 @@ module.exports = function(app) {
     });
   });
 
-  // Update Parents info
+  // Update Parents info for given parent id
   app.put("/api/parents/update", function(req, res) {
     
     db.Parent.update(req.body,
@@ -77,10 +77,10 @@ module.exports = function(app) {
 
   //get parent info for a specific dancer
   app.get("/api/parents/select/:DancerId", function(req, res) {
+    console.log("inside get parent for dancer "+ req.params.DancerId);
    db.Parent.findAll({
      where: {
-       Dancerid: req.params.DancerId,
-       is_active:true
+       Dancerid: req.params.DancerId
      }
    }).then(function(dbParent) {
      res.json(dbParent);

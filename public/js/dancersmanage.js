@@ -3,12 +3,13 @@ var parentContainer = $(".parent-container");
 $( document ).ready(function() {
 
      //bring up add dancer modal when click on Add Dancer button
-  $("#addDancerBtn").click(function(){
-    $("#addDancerModal").modal();
+    $("#addDancerBtn").click(function(){
 
-});
+        $("#addDancerModal").modal();
 
-// BEGINNING OF ADD DANCER MODAL CODE
+    });
+
+// ---------- BEGINNING OF ADD DANCER MODAL CODE -----------
 
 // Adding an event listener for when the ADD DANCER is submitted
 $(addDancerForm).on("submit", function handleFormSubmit(event) {
@@ -53,8 +54,7 @@ $('#addDancerModal').on('hidden.bs.modal', function () {
       window.location.href = "/dmanage";  
     });
 
-// End of ADD DANCER modal code
-
+// ---------- END OF ADD DANCER MODAL CODE -----------
 
 getDancers();
 
@@ -75,9 +75,8 @@ function getDancers() {
       });
 }
 
-    // This function creates the table of dancers
+// This function creates the table of dancers
 function initializeRows(dancers) {        
-       
         
         $table = $('<table class="table table-bordered table-inverse" style="background-color: white">');
          
@@ -85,11 +84,11 @@ function initializeRows(dancers) {
            .append('<thead>').children('thead')
            .append('<tr />').children('tr')
            .append('<th>Dancer Name</th><th>Year in School</th><th>Image Name</th><th>Update Dancer Info</th><th>Remove Dancer</th><th STYLE=display:NONE>Dancer ID</th>');           
-          //  .append('<th>Dancer Name</th><th>Year in school</th><th>Image path</th><th>Update button</th><th>Remove Button</th><th>Dancer ID</th><th>Parent Info</th>');
         
         var $tbody = $table.append('<tbody />').children('tbody');
 
         for (var i = 0; i < dancers.length; i++) {
+            
             $tbody.append('<tr />').children('tr:last')
             .append("<td>"+dancers[i].dancer_name+"</td>")
             .append("<td>"+dancers[i].year_in_school+"</td>")
@@ -97,14 +96,13 @@ function initializeRows(dancers) {
             .append("<td><button type='button' class='btn btn-primary updtbtn' id='updtbtn'>Update</button></td>")
             .append("<td><button type='button' class='btn btn-primary delbtn' id='delbtn'>Delete</button></td>")
             .append("<td STYLE=display:NONE>"+dancers[i].id+"</td>"); //we are not showing the dancer id in the table, but we need it here to use when updating and deleting
-            // .append("<td><button type='button' class='btn btn-primary parentbtn' id='parentbtn'>Look Up</button></td>");  
+        
         }
         $table.appendTo('#dynamicTable');
-//        parentContainer.append(parentsToAdd);
 }
 
 
-      // This function displays a messgae when there are no dancers
+// This function displays a message when there are no dancers
 function displayEmpty() {
     blogContainer.empty();
     var messageh2 = $("<h2>");
@@ -115,7 +113,7 @@ function displayEmpty() {
 
   //End of build page code (with table of dancers)
 
-//BEGINNING OF UPDATE MODAL CODE
+//-------------------BEGINNING OF UPDATE MODAL CODE --------------------
 $('body').on("click", "#updtbtn", function() {
     var tablerow = [];
     console.log("inside update button")
@@ -129,6 +127,24 @@ $('body').on("click", "#updtbtn", function() {
 
 $(".modal-body #dancer-name").val( tablerow[0] );
 $(".modal-body #school-year").val( tablerow[1] );
+var yearFromTable = tablerow[1];
+
+switch(yearFromTable) {
+  case "Freshman":
+      $('input[name=yr-in-school][value=Freshman]').prop("checked", true);
+      break;
+  case "Sophomore":
+      $('input[name=yr-in-school][value=Sophomore]').prop("checked", true);
+      break;
+  case "Junior":
+      $('input[name=yr-in-school][value=Junior]').prop("checked", true);
+      break;
+  case "Senior":
+      $('input[name=yr-in-school][value=Senior]').prop("checked", true);
+      break;
+  default:
+      //cannot be anything else
+}  
 $(".modal-body #img-path").val( tablerow[2] );
 $(".modal-body #dancer-id").val( tablerow[5] );
 // $(".modal-body #parent-id").val( tablerow[6] );
@@ -146,7 +162,9 @@ $(updForm).on("submit", function handleFormSubmit(event) {
        // Getting jQuery references to the form input values
         var dancerIdInput = $("#dancer-id").val().trim();
         var dancerNameInput = $("#dancer-name").val().trim();
-        var dancerSchoolYear = $("#school-year").val().trim();
+        
+        var dancerSchoolYear = $("input[name='yr-in-school']:checked",this).val(); 
+        console.log("dancerSchoolYear: " + dancerSchoolYear);
         var dancerImgPath = $('#img-path').val().trim();   
     
         var updateDancer = {
@@ -155,8 +173,6 @@ $(updForm).on("submit", function handleFormSubmit(event) {
             year_in_school: dancerSchoolYear,
             image_path: dancerImgPath
         }
-    
-        console.log(updateDancer);
 
         $.ajax({
             method: "PUT",
@@ -165,8 +181,7 @@ $(updForm).on("submit", function handleFormSubmit(event) {
           })
           .done(function() {
             var $select = $('#updateSuccessMessage');
-            $select.append('<h3>You have successfully updated the dancer information!</h3><p>Click Close to continue.</p></h3>');
-            // $("#upds").html("information has been updated"); 
+            $select.append('<h3>You have successfully updated the dancer information!</h3><p>Click Close to continue.</p></h3>'); 
           });
 
 });    
@@ -180,13 +195,11 @@ $('#myModal').on('hidden.bs.modal', function () {
 //BEGINNING OF DELETE MODAL CODE  
 $('body').on("click", "#delbtn", function() {
     var tablerow = [];
-    console.log("inside delete button")
-    var $row = $(this).closest("tr"),       // Finds the closest row <tr> 
+    var $row = $(this).closest("tr"),   // Finds the closest row <tr> 
     $tds = $row.find("td");             // Finds all children <td> elements
 
-    $.each($tds, function() {               // Visits every single <td> element
-    console.log($(this).text())        // Prints out the text within the <td>
-    tablerow.push($(this).text())
+    $.each($tds, function() {           // Visits every single <td> element
+        tablerow.push($(this).text())
 });
 
 $(".modal-body2 #ddancer-name").val( tablerow[0] );
@@ -204,34 +217,17 @@ $('#myModal2').modal({
 
 $(delForm).on("submit", function handleFormSubmit(event) {
     
-       event.preventDefault();
+        event.preventDefault();
 
-       //TODO: get parent id of the dancer
-       // Getting jQuery references to the form input values
-       var dancerIdInput = $("#ddancer-id").val().trim();
-       var parentIdInput = $("#dparent-id").val().trim();
-       var dancerNameInput = $("#ddancer-name").val().trim();
-       var dancerSchoolYear = $("#dschool-year").val().trim();
-       var dancerImgPath = $('#dimg-path').val().trim();   
+        // Getting jQuery references to the form input values
+        var dancerid = $("#ddancer-id").val().trim(); 
         
-        pid = parentIdInput;
-        console.log("inside delete:",pid);
-        id = dancerIdInput;
-        console.log("inside delete:",id);
-       is_active_value=false;
-    
-        
+        is_active_value=false;
+          
         var updateDancer = {
-            id: id,
+            id: dancerid,
             is_active: is_active_value
         }
-    
-        var updateParent = {
-            DancerId : id,
-            is_active: is_active_value
-        }
-
-        console.log(updateDancer);
 
         $.ajax({
             method: "PUT",
@@ -239,19 +235,43 @@ $(delForm).on("submit", function handleFormSubmit(event) {
             data: updateDancer
           })
           .done(function() {
-            $.ajax({
-                method: "PUT",
-                url: "/api/parents/update",
-                data: updateParent
-              })
-              .done(function() {
                 var $select = $('#deleteSuccessMessage');
                 $select.append('<h3>You have successfully removed this dancer from the database!</h3><p>Click Close to continue.</p></h3>');    
-                // $("#delds").html("dancer has been deleted");  
-               
-              });
           });
-  
+    
+        //get parents of dancer
+
+        $.get("/api/parents/select/" + dancerid, function(data) {
+            
+            parents=data;
+   
+            if (parents.length > 0) {
+                 
+                //loop through parents so we can set them to inactive
+                for (var i = 0; i < parents.length; i++) {
+
+                    var updateParent = {
+                        id: parents[i].id,
+                        DancerId : dancerid,
+                        is_active: false
+                    }
+                    
+                    $.ajax({
+                            method: "PUT",
+                            url: "/api/parents/update",
+                            data: updateParent
+                          })
+                          .done(function() {
+                            // var $select = $('#deleteSuccessMessage');
+                            // $select.append('<h3>You have successfully removed this dancer from the database!</h3><p>Click Close to continue.</p></h3>');    
+                      });
+                          
+                } //end for
+                
+            } //end if
+
+        }); //end get
+ 
   $('#myModal2').on('hidden.bs.modal', function () {
                     window.location.href = "/dmanage"; 
   });
