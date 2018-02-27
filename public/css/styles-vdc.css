@@ -10,8 +10,8 @@ body, html {
 }
 
 .bg {
-    /* PRINCESS: */
-    background-color: #B2DFEE;  
+    /* VANGUARD: */ 
+    background-color: rgb(189, 32, 49);
 }
 
 .panel {
@@ -31,7 +31,8 @@ body, html {
 }
 
 .modal-header, h4 {
-    background-color: #FCD116;
+    /* VANGUARD: */ 
+    background-color: #FDB813;
     color:white !important;
     text-align: center;
     font-size: 22px;

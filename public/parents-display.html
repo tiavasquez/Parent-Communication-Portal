@@ -19,7 +19,7 @@
     
 </head>
 
-<body class="blue-bg">
+<body class="bg">
 
 <!-- <div class="gradient-bg"> -->
 
@@ -29,6 +29,8 @@
             <li><a href="/">Home</a></li>
             <li><a href="/dancerDisplay">Dancers</a></li>
             <li class="active"><a href="/parentDisplay">Parents</a></li>
+            <li><a href="/calendarDisplay">Calendar</a></li>
+            <li><a href="/videosDisplay">Videos</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
                 <span class="caret"></span></a>
@@ -53,28 +55,30 @@
             <br>
             <div id="contacts" class="panel-collapse collapse show" aria-expanded="true">
                 <ul class="list-group pull-down" id="contact-list">
-                <!-- <li class="list-group-item">
+                <!-- THIS IS WHAT WE'RE DYNAMICALLY BUILDING:
+                    <li class="list-group-item">
                         <div class="row w-100">
                             <div class="col-12 col-sm-6 col-md-6 px-0">
                                 <span class="fa fa-child fa-fw text-muted" style="font-size:24px"></span>
-                                <span class="name lead">Mia Vasquez</span>                            
+                                <span class="name lead">DANCER NAME</span>                            
                             </div>
                             <div class="col-12 col-sm-6 col-md-6  text-sm-left">
-                                <span class="name lead">Tia Vasquez</span>
+                                <span class="name lead">PARENT NAME</span>
                                 <br>
                                 <span class="fa fa-phone fa-fw text-muted"></span>
-                                <span class="text-muted">(651) 357-6946</span>
+                                <span class="text-muted">PARENT PHONE#</span>
                                 <br>
                                 <span class="fa fa-envelope fa-fw text-muted"></span>
-                                <span class="text-muted small">tiavsqz@yahoo.com</span>
+                                <span class="text-muted small">PARENT EMAIL</span>
                             </div>
                         </div>
                         </li> -->
                 </ul>
-                <!--/contacts list-->
+                <!-- end contacts list -->
             </div>  
-        </div> <!--end of contacts list-->
-    </div> <!--end of div container-->
+        </div> <!-- end contacts card -->
+    
+    </div> <!-- end container -->
 
 <!-- Custom Script -->
 <script src="js/parents-display.js" type="text/javascript"></script>

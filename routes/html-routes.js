@@ -10,7 +10,7 @@ var path = require("path");
 // =============================================================
 module.exports = function(app) {
 
-  // Each of the below routes just handles the HTML page that the user gets sent to.
+  // Each of the below routes handle the HTML page that the user gets sent to from the navbar.
 
   // index route loads view.html
   app.get("/", function(req, res) {
@@ -31,7 +31,15 @@ module.exports = function(app) {
 
   app.get("/parentDisplay", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/parents-display.html"));
-  }); 
+  });
+  
+  app.get("/calendarDisplay", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/calendar-display.html"));
+  });
+
+  app.get("/videosDisplay", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/videos-display.html"));
+  });
 
   app.get("/contactDisplay", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/contact-display.html"));
