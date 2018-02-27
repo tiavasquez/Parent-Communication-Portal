@@ -8,12 +8,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   
 </head>
 
-<body class="blue-bg">
+<body class="bg">
       
     <nav class="navbar transparent navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
@@ -51,7 +49,6 @@
               
                 <div class="modal-content">
                   <div class="modal-header" style="padding:35px 50px;">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4>Add Dancer</h4>
                   </div>
                   <div class="modal-body" style="padding:40px 50px;">
@@ -120,7 +117,6 @@
     
             <div class="modal-header">
               <h4 class="modal-title">Update Dancer Information</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
     
                     <div class="modal-body" style="padding:40px 50px;">
@@ -130,12 +126,6 @@
                                 <input type="text" class="form-control" value="dname" id="dancer-name">
                              
                               </div>  
-                              <!-- <div class="form-group">
-                                <label for="school-year" class="form-control-label">Year in School:</label>
-                                <input type="text" class="form-control" value="year" id="school-year">
-                              </div> -->
-                              
-                              
                             <div class="form-group">
                                 <label class="control-label">Year in School</label>
                                     <div class="radio">
@@ -184,10 +174,6 @@
                             </form>
                     </div>  
                     
-            <!-- <div class="modal-footer">
-              <h3><b><span id="upds"></span></b></h3>  
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div> -->
             <div class="modal-footer"> 
                 <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
                     <span class="glyphicon glyphicon-remove"></span> Cancel</button>
@@ -199,7 +185,7 @@
       </div>
       <!-- END of Update Modal -->
 
-      <!-- Remove/Delete Modal -->
+<!-- Remove/Delete Modal -->
       <div class="modal fade" id="myModal2">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
@@ -207,7 +193,6 @@
                 <div class="modal-header">
                   <h4 class="modal-title">Remove Dancer from Database</h4>
                   <p>(Note that any parent assigned to this dancer will also be removed)</p>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body2" style="padding:40px 50px;">
                     
@@ -229,10 +214,6 @@
                             <label for="ddancer-id" class="form-control-label">Dancer ID:</label>
                             <input type="text" class="form-control" value="id" id="ddancer-id" readonly>
                           </div>
-                          <!-- <div class="form-group">
-                            <label for="dparent-id" class="form-control-label" >Parent ID:</label>
-                            <input type="text" class="form-control" value="pid" id="dparent-id" readonly>
-                          </div> -->
                             <div class="form-group"> <!-- Submit Button -->                                                       
                               <button type="submit" class="btn btn-primary">Submit</button>
                             </div>  
@@ -241,10 +222,6 @@
                             </div>  
                         </form>
                 </div>       
-                <!-- <div class="modal-footer">
-                  <h3><b><span id="delds"></span></b></h3>  
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div> -->
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
                         <span class="glyphicon glyphicon-remove"></span> Cancel</button>
@@ -261,29 +238,6 @@
  </div>
 
 </div> <!-- END of container -->
-  <!-- Parent Lookup Modal -->
- <!-- <div class="modal fade" id="myModalp">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-    
-            <div class="modal-header">
-              <h4 class="modal-title">Parents information</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-                    <div class="modal-body">
-                       <div id="dynamicTable2"></div>   
-                    </div>       
-
-            <div class="modal-footer">
-             
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-    
-          </div>
-        </div>  
-      </div> -->
-  <!-- END Parent Lookup Modal -->
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -2,14 +2,20 @@ body, html {
     height: 100%;
 }
 .index-bg { 
+    /* The image used */
     background-image: url("../images/home-bg.jpg");
+    /* Full height */
     height: 100%; 
+    /* Center and scale the image nicely */
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .bg {
+    /* background-color: rgb(139, 203, 221); blue */
+    /* VANGUARD: */ 
+    /* background-color: rgb(189, 32, 49); */
     /* PRINCESS: */
     background-color: #B2DFEE;  
 }
@@ -28,9 +34,11 @@ body, html {
     text-align: center;
     background: transparent;
     border-color: transparent; 
+    /* color: white; */
 }
 
 .modal-header, h4 {
+    /* background-color: #FDB813; VANGUARD DANCE TEAM*/
     background-color: #FCD116;
     color:white !important;
     text-align: center;
@@ -40,3 +48,18 @@ body, html {
 .modal-footer {
     background-color: #f9f9f9;
 }
+
+/* @media (min-width: 768px) {
+    .panel img {
+    height: 200px;
+    width: 100 px;
+    padding-top: 30px;
+    }
+    
+@media (min-width: 480px) {
+    .panel img {
+    height: 100px;
+    width: 50px;
+    padding-top: 30px;
+    } */
+
