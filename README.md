@@ -16,6 +16,14 @@ It is not public. Parents are given sign on username and password by administrat
 
 Only the administrator can update parent and team member info.
 
+Basic functions:
+Display team members
+Display parents
+Display calendar
+Display youtube video playlist
+Update team members
+Update parents
+
 To run this locally you need to install the following packages:
 * express
 * sequelize
