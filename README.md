@@ -10,9 +10,9 @@ Purpose: One stop shop where parents can:
 5.	View meeting notes (NEXT PHASE)
 6.	Post announcements (NEXT PHASE)
 
-It is not public. Parents are given sign on username and password by administrator.
+It is not intended to be a public website. Currently there is no login process. Anyone who goes to the URL is given access to view and update.
 
-Only the administrator can update parent and team member info.
+NEXT PHASE: Parents will be given sign on username and password by administrator for view access only. Administrator will have separate username and password and only the administrator can update parent and team member info.
 #
 To run this locally you need to install the following packages:
 * express
