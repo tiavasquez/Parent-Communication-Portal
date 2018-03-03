@@ -13,7 +13,7 @@ Purpose: One stop shop where parents can:
 It is not public. Parents are given sign on username and password by administrator.
 
 Only the administrator can update parent and team member info.
-
+#
 To run this locally you need to install the following packages:
 * express
 * sequelize
