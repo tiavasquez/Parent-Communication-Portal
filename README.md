@@ -22,7 +22,7 @@ To run this locally you need to install the following packages:
 * path
 
 To customize for another dance team:
-* Make images folder the current folder (not “images-princesses” etc.)
+* Make images folder the current folder
 * Make stylesheet the current file in css/styles.css 
 * Need to set database name in config.json
 * Set calendar embed code in calendar.html
