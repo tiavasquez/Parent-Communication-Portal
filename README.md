@@ -12,10 +12,11 @@ One stop shop where parents can:
 5.	View meeting notes (NEXT PHASE)
 6.	Post announcements (NEXT PHASE)
 
-It is not intended to be a public website.
+### Important
+It is not intended to be a public website. It is for team parents.
 
 ### Login
-Currently there is no login process. Anyone who goes to the URL is given access to view and update. In the next phase, parents will be given sign on username and password by administrator for view access only. Administrator will have separate username and password and only the administrator can update parent and team member info.
+Currently there is no login process. Anyone who goes to the URL has access to view and update. In the next phase, parents will be given sign on username and password by administrator for view access only. Administrator will have separate username and password and only the administrator can update parent and team member info.
 
 ### To customize for another dance team
 * Make images folder the current folder in public/images (dancers images, homepage image)
