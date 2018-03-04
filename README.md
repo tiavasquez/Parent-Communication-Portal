@@ -14,13 +14,6 @@ It is not intended to be a public website.
 
 Login: Currently there is no login process. Anyone who goes to the URL is given access to view and update. In the next phase, parents will be given sign on username and password by administrator for view access only. Administrator will have separate username and password and only the administrator can update parent and team member info.
 
-To run this locally you need to install the following packages:
-* express
-* sequelize
-* mySQL2
-* body-parser
-* path
-
 To customize for another dance team:
 * Make images folder the current folder
 * Make stylesheet the current file in css/styles.css 
@@ -36,3 +29,10 @@ Delete Dancer | sets dancer record to inactive AND sets parent(s) record to inac
 Delete Dancer, Delete Parent | no way to reactivate dancers and/or parents that have been “removed” (set to inactive) | ability to reactivate a dancer and parent
 Add Parent | select/assign 1 dancer | Allow more than 1 dancer to be selected/assigned
 Update Parent | cannot change dancer selection | allow dancer(s) selection to be changed
+
+To run this locally you need to install the following packages:
+* express
+* sequelize
+* mySQL2
+* body-parser
+* path
