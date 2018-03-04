@@ -25,6 +25,7 @@ Currently there is no login process. Anyone who goes to the URL has access to vi
 * Set calendar embed code in calendar.html
 * Set video Playlist embed code in videos.html
 
+### Constraints
 Functionality | Current | Future
 --- | --- | ---
 Dancer table and parent table relationship | 1 dancer can have more than 1 parent | in addition, 1 parent can have more than 1 dancer
