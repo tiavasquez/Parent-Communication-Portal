@@ -3,7 +3,7 @@
 Audience: Parents of high school dance team
 
 Purpose: One stop shop where parents can:
-1.	View calendar
+1.	View calendar of meetings, performances, events
 2.	View videos of performances
 3.	View parent contact info
 4.	View dance team members
