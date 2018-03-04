@@ -28,7 +28,7 @@ Currently there is no login process. Anyone who goes to the URL has access to vi
 ### Constraints
 Functionality | Current | Future
 --- | --- | ---
-Dancer table and parent table relationship | 1 dancer can have more than 1 parent | in addition, 1 parent can have more than 1 dancer
+Dancer table and parent table relationship | 1 dancer can have more than 1 parent, 1 parents can only have 1 dancer | 1 dancer can have more than 1 parent, AND 1 parent can have more than 1 dancer
 Dancers Display, Parents Display, Manage Dancers, Manage Parents | sorted by id | sorted alphabetically
 Delete Dancer | sets dancer record to inactive AND sets parent(s) record to inactive | if no other dancer has the same parent(s), then inactivate the parent(s) record also
 Delete Dancer, Delete Parent | no way to reactivate dancers and/or parents that have been “removed” (set to inactive) | ability to reactivate a dancer and parent
