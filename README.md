@@ -28,5 +28,9 @@ To customize for another dance team:
 * Set calendar embed code in calendar.html
 * Set video Playlist embed code in videos.html
 
+Specific current and future functionality:
 
+Dancer table and parent table relationship
+Current: 1 dancer can have more than 1 parent
+Future: 1 dancer can have more than 1 parent AND 1 parent can have more than 1 dancer
 
