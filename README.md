@@ -29,11 +29,12 @@ Currently there is no login process. Anyone who goes to the URL has access to vi
 Functionality | Current | Future
 --- | --- | ---
 Dancer table and parent table relationship | 1 dancer can have > 1 parent, 1 parent can only have 1 dancer | 1 dancer can have > 1 parent, 1 parent can have > 1 dancer
-Dancers Display, Parents Display, Manage Dancers, Manage Parents | sorted by id | sorted alphabetically
-Delete Dancer | sets dancer record to inactive AND sets parent(s) record to inactive | if no other dancer has the same parent(s), then inactivate the parent(s) record also
-Delete Dancer, Delete Parent | no way to reactivate dancers and/or parents that have been “removed” (set to inactive) | ability to reactivate a dancer and parent
-Add Parent | select/assign 1 dancer | Allow more than 1 dancer to be selected/assigned
-Update Parent | cannot change dancer selection | allow dancer(s) selection to be changed
+Dancers Display, Parents Display, Manage Dancers, Manage Parents | Sorted by id | Sorted alphabetically
+Delete Dancer | Sets dancer record to inactive AND sets parent(s) record to inactive | If no other dancer has the same parent(s), then inactivate the parent(s) record also
+Delete Dancer, Delete Parent | No way to reactivate dancers and/or parents that have been “removed” (set to inactive) | Ability to reactivate a dancer and parent
+Add Parent | Select/assign 1 dancer | Allow more than 1 dancer to be selected/assigned
+Update Parent | Cannot change dancer selection | Allow dancer(s) selection to be changed
+
 
 ### To run this locally 
 Install the following packages:
