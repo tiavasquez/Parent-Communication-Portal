@@ -28,9 +28,11 @@ To customize for another dance team:
 * Set calendar embed code in calendar.html
 * Set video Playlist embed code in videos.html
 
-Specific current and future functionality:
-
-Dancer table and parent table relationship
-Current: 1 dancer can have more than 1 parent
-Future: 1 dancer can have more than 1 parent AND 1 parent can have more than 1 dancer
-
+Functionality | Current | Future
+--- | --- | ---
+Dancer table and parent table relationship | 1 dancer can have more than 1 parent | in addition, 1 parent can have more than 1 dancer
+Dancers Display, Parents Display, Manage Dancers, Manage Parents | sorted by id | sorted alphabetically
+Delete Dancer | sets dancer record to inactive AND sets parent(s) record to inactive | if no other dancer has the same parent(s), then inactivate the parent(s) record also
+Delete Dancer, Delete Parent | no way to reactivate dancers and/or parents that have been “removed” (set to inactive) | ability to reactivate a dancer and parent
+Add Parent | select/assign 1 dancer | Allow more than 1 dancer to be selected/assigned
+Update Parent | cannot change dancer selection | allow dancer(s) selection to be changed
