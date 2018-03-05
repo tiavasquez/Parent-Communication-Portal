@@ -1,24 +1,27 @@
 {
     "development": {
-      "username": "root",
-      "password": "chinchilla3",
-      "database": "princess_db",
-      "host": "127.0.0.1",
+      "username": "ynvtom80nxivxdhl",
+      "password": "z4521evsfvl3nz7i",
+      "database": "z1kburgfbtqzbmna",
+      "host": "gp96xszpzlqupw4k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "dialect": "mysql"
     },
     "test": {
-      "username": "root",
-      "password": null,
-      "database": "database_test",
-      "host": "127.0.0.1",
+      "username": "ynvtom80nxivxdhl",
+      "password": "z4521evsfvl3nz7i",
+      "database": "z1kburgfbtqzbmna",
+      "host": "gp96xszpzlqupw4k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": null,
-      "database": "database_production",
-      "host": "127.0.0.1",
+      "username": "ynvtom80nxivxdhl",
+      "password": "z4521evsfvl3nz7i",
+      "database": "z1kburgfbtqzbmna",
+      "host": "gp96xszpzlqupw4k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "dialect": "mysql"
     }
   }
+
+
+  
   
