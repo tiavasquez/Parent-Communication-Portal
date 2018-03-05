@@ -18,7 +18,11 @@ It is not intended to be a public website. It is for team parents.
 ### Login
 Currently there is no login process. Anyone who goes to the URL has access to view and update. In the next phase, parents will be given sign on username and password by administrator for view access only. Administrator will have separate username and password and only the administrator can update parent and team member info.
 
+
+### To customize for dance team
+
 ### To customize for a dance team
+
 * Make images folder the current folder in public/images (dancers images, homepage image)
 * Make stylesheet the current file in public/css/styles.css (background color, modal headers color, dancer name color) 
 * Need to set database name in config.json
@@ -34,7 +38,6 @@ Delete Dancer | Sets dancer record to inactive AND sets parent(s) record to inac
 Delete Dancer, Delete Parent | No way to reactivate dancers and/or parents that have been “removed” (set to inactive) | Ability to reactivate a dancer and parent
 Add Parent | Select/assign 1 dancer | Allow more than 1 dancer to be selected/assigned
 Update Parent | Cannot change dancer selection | Allow dancer(s) selection to be changed
-
 
 ### To run this locally 
 Install the following packages:
